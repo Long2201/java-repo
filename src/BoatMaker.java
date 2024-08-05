@@ -10,6 +10,17 @@ public class BoatMaker {
         myBoat.setName("Australia II");
         System.out.println(myBoat.getName());
         System.out.println(myBoat1.getName());
+
+        //Adding loop for checkout 19
+        int i = 4;
+        while (i > 0) {
+            Boat testBoat = new Boat();
+            System.out.println("Sequence #: " + testBoat.getSeqNum());
+            System.out.println(testBoat);
+            i--;
+        }
+        System.out.println();
+        System.out.println(Boat.getTotal());
     }
 }
 

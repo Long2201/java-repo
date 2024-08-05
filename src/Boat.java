@@ -4,16 +4,22 @@ public class Boat {
     private String boatClass = "unknown";
     private int regNum = -1;
     private double yardstick;
+    private static int countBoats = 0;
+    private int sequenceNum;
     
     // Class Constructors
     public Boat(){
-        yardstick = 100.0;
+        this.yardstick = 100.0;
+        countBoats++ ;
+        this.sequenceNum = countBoats;
     }
     public Boat(String initName, String initBoatClass, int initRegNum, double initYardstick){
         this.name = initName;
         this.boatClass = initBoatClass;
         this.regNum = initRegNum;
         this.yardstick = initYardstick;
+        countBoats++ ;
+        this.sequenceNum = countBoats;
     }
 
     //Functions to get instances of the class
@@ -48,4 +54,13 @@ public class Boat {
     public String toString(){
         return "Boat " + this.name + ", Class = " + this.boatClass + ", Registration # = KA " + this.regNum;
     } 
+    
+    public int getSeqNum(){
+        return sequenceNum;
+    }
+
+    //A static function to return the count of boats
+    public static String getTotal(){
+        return "Total number of boats created = " + countBoats;
+    }
 }
