@@ -63,4 +63,20 @@ public class Boat {
     public static String getTotal(){
         return "Total number of boats created = " + countBoats;
     }
+
+    public String adjustedRaceTime(int start, int end){
+        if (start > end){
+            return "Incorrect time keeping";
+        }
+        else{
+            int startHour = start / 100;
+            int startMinutes = start % 100;
+            int endHour = end / 100;
+            int endMinutes = end % 100;
+            int elapsedTime = (endHour - startHour - 1)*60 + (60-startMinutes) + endMinutes;
+            double adjustedTime = (elapsedTime / yardstick) * 100;
+            return String.format("%.2f", adjustedTime);
+        }
+    }
+    
 }
