@@ -1,5 +1,6 @@
 public class BoatMaker {
     public static int getCorrectedTime(int min, int max) {
+        // Making sure the output will sure be in the range of requirements
         int randomNum;
         do {
             randomNum = min + (int)(Math.random() * ((max - min) + 1));
@@ -8,7 +9,7 @@ public class BoatMaker {
             if (randomMinute >= 60) {
                 randomNum = randomHour * 100 + 100 + (randomMinute - 60);
             }
-        } while (randomNum > max); // Repeat if the number exceeds max
+        } while (randomNum > max || randonmNum < min); // Repeat if the number exceeds max or less than min 
         return randomNum;
     }
     public static void main(String[] args) {
